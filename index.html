@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Uppik.net CDN</title>
+</head>
+<body>
+	<h1>Uppik - Upload every where</h1>
+	<div>
+		<center id="uppik-container"></center>
+	</div>
+	<div style="margin-top:20px;">
+		<input type="text" readonly id="uppik-result" style="width: 80%;" />
+	</div>
+	<script src="http://cdn.uppik.net/lastest/uppik.min.js"></script>
+	<script type="text/javascript">
+		document.addEventListener("load", function() {
+			if (!window.uppik && window.Uppik) {
+				window.uppik = new Uppik(
+					'uppik-container',
+					{
+					    onSuccess: function(url) {
+					        var result = document.getElementById('uppik-result');
+					        result.value = url;
+					    },
+					    onUpload: function() {
+							var result = document.getElementById('uppik-result');
+							result.value  = "";
+					    }
+					}
+				);
+			}
+		});
+	</script>
+</body>
+</html>
