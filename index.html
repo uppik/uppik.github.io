@@ -8,14 +8,14 @@
 <body>
 	<h1>Uppik - Upload every where</h1>
 	<div>
-		<center id="uppik-container"></center>
+		<div id="uppik-container" style="width:300px; height: 100px; margin: 10px auto;">UPLOAD</div>
 	</div>
 	<div style="margin-top:20px;">
 		<input type="text" readonly id="uppik-result" style="width: 80%;" />
 	</div>
 	<script src="http://cdn.uppik.net/lastest/uppik.min.js"></script>
 	<script type="text/javascript">
-		document.addEventListener("load", function() {
+		window.addEventListener("load", function() {
 			if (!window.uppik && window.Uppik) {
 				window.uppik = new Uppik(
 					'uppik-container',
@@ -31,7 +31,7 @@
 					}
 				);
 			}
-		});
+		}, false);
 	</script>
 </body>
 </html>
