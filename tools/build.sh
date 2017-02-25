@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wget -P /tmp/ https://raw.githubusercontent.com/uppik/uppik-js/master/src/uppik.js
+wget -N -P /tmp/ https://raw.githubusercontent.com/uppik/uppik-js/master/src/uppik.js
 
 curl -X POST --data-urlencode 'input@/tmp/uppik.js' https://javascript-minifier.com/raw > /tmp/uppik.min.js -v
 
